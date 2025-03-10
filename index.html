@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 50%;
+        height: 1100px;
+        margin: auto;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+      .nav_bar {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(216, 216, 216);
+        border-radius: 5px;
+        img {
+          width: 100px;
+          margin-top: 2px;
+          margin-bottom: 3px;
+          position: relative;
+          right: 40px;
+        }
+        .menu {
+          display: flex;
+          gap: 100px;
+          justify-content: center;
+          align-items: center;
+        }
+        p {
+          display: inline;
+          font-size: 20px;
+          &:hover {
+            background-color: bisque;
+            padding: 7px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+      main {
+        padding: 20px;
+        .section1 {
+          p {
+            position: relative;
+            line-height: 2;
+          }
+          .img_main {
+            width: 500px;
+            position: absolute;
+            bottom: 110px;
+
+            z-index: -1;
+          }
+          .dot {
+            height: 250px;
+            width: 250px;
+            background-color: whitesmoke;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            bottom: 200px;
+            right: 20px;
+            z-index: -1;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt=""
+        />
+        <div class="menu">
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>PHP</p>
+          <p>PYTHON</p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="section1">
+        <p>
+          Web development is the work involved in developing a website for the
+          Internet (World Wide Web) or an intranet (a private network).[1] Web
+          development can range from developing a simple single static page of
+          plain text to complex web applications, electronic businesses, and
+          social network services. A more comprehensive list of tasks to which
+          Web development commonly refers, may include Web engineering, Web
+          design, Web content development, client liaison,
+          client-side/server-side scripting, Web server and network security
+          configuration, and e-commerce development. Among Web professionals,
+          "Web development" usually refers to the main non-design aspects of
+          building Web sites: writing markup and coding.[2] Web development may
+          use content management systems (CMS) to make content changes easier
+          and available with basic technical skills. For larger organizations
+          and businesses, Web development teams can consist of hundreds of
+          people (Web developers) and follow standard methods like Agile
+          methodologies while developing Web sites.[1] Smaller organizations may
+          only require a single permanent or contracting developer, or secondary
+          assignment to related job positions such as a graphic designer or
+          information systems technician. Web development may be a collaborative
+          effort between departments rather than the domain of a designated
+          department. There are three kinds of Web developer specialization:
+          front-end developer, back-end developer, and full-stack developer.[3]
+          Front-end developers are responsible for behavior and visuals that run
+          in the user browser, while back-end developers deal with the
+          servers.[4] Since the commercialization of the Web, the industry has
+          boomed and has become one of the most used technologies ever. A web
+          developer is a programmer who develops World Wide Web applications
+          using a client–server model. The applications typically use HTML, CSS,
+          and JavaScript in the client, and any general-purpose programming
+          language in the server. HTTP is used for communications between client
+          and server. A web developer may specialize in client-side applications
+          (Front-end web development), server-side applications (back-end
+          development), or both (full-stack development).[1] There are no formal
+          educational or license requirements to become a web developer.
+          However, many colleges and trade schools offer coursework in web
+          development. There are also many tutorials and articles which teach
+          web development, often freely available on the web - for example, on
+          JavaScript. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Deleniti a recusandae impedit repudiandae. Aperiam obcaecati tempore
+          tenetur, natus impedit, adipisci magnam sed quia a maiores quidem aut
+          tempora, eius ad.
+        </p>
+        <img
+          class="img_main"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Dq60YHkBWCsAjxKFv2GB_0JIYg0iJD3TIw&s"
+          alt=""
+        />
+        <span class="dot"></span>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
